@@ -6,7 +6,7 @@
 #    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 13:22:24 by aascedu           #+#    #+#              #
-#    Updated: 2022/11/21 16:33:44 by aascedu          ###   ########lyon.fr    #
+#    Updated: 2022/11/21 16:37:54 by aascedu          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJ = $(SRC:.c=.o)
 
 LIBFT_DIR = ./libft/
 
-HEADER = libft_printf.h libft.h
+HEADER = ft_printf.h libft.h
 
 CC = cc
 RM = rm -rf

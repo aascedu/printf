@@ -6,11 +6,11 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:40:54 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 10:40:58 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:39:25 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_print_str(char *str)
 {

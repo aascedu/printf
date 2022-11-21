@@ -6,11 +6,11 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:40:50 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 15:18:03 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:39:22 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft_printf.h"
+#include "../include/ft_printf.h"
 
 void	ft_put_nbr(int n, int *length)
 {

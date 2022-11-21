@@ -6,11 +6,11 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:40:46 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 15:02:56 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:39:18 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft_printf.h"
+#include "../include/ft_printf.h"
 
 static void	ft_hex_upper(unsigned int nbr, int *length)
 {

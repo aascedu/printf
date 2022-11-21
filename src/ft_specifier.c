@@ -6,11 +6,11 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:41:08 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 15:48:05 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:39:35 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft_printf.h"
+#include "../include/ft_printf.h"
 
 int	ft_specifier(va_list ap, const char c)
 {
