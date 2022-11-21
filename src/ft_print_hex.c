@@ -6,7 +6,7 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:40:46 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 16:39:18 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/21 16:57:34 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_hex_upper(unsigned int nbr, int *length)
 {
-	if (nbr > 16)
+	if (nbr >= 16)
 	{
 		ft_hex_upper(nbr / 16, length);
 		ft_hex_upper(nbr % 16, length);
@@ -30,7 +30,7 @@ static void	ft_hex_upper(unsigned int nbr, int *length)
 
 static void	ft_hex_lower(unsigned int nbr, int *length)
 {
-	if (nbr > 16)
+	if (nbr >= 16)
 	{
 		ft_hex_lower(nbr / 16, length);
 		ft_hex_lower(nbr % 16, length);
