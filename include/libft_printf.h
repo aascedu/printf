@@ -3,7 +3,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "libft.h"
+# include "../libft/libft.h"
 
 int	ft_print_char(int c);
 int	ft_print_str(char *str);
