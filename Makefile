@@ -1,23 +1,35 @@
-SRC = src/ft_specifier.c scr/ft_printf.c src/ft_print_str.c \
-	src/ft_print_char.c src/main.c
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/11/21 13:22:24 by aascedu           #+#    #+#              #
+#    Updated: 2022/11/21 15:56:41 by aascedu          ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
+
+SRC = src/ft_specifier.c src/ft_printf.c src/ft_print_str.c \
+	src/ft_print_char.c src/
 
 OBJ = $(SRC:.c=.o)
 
-HEADER = libft_printf.h
+HEADER = ./include/libft_printf.h
 
 CC = cc
 RM = rm -rf
 CFLAGS = -Wall -Werror -Wextra -I
 
-NAME = test
+NAME = libft_printf.a
 
 all : $(NAME)
 
-src/%.o : %.c Makefile include/$(HEADER)
+src/%.o : %.c Makefile $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 $(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) -o $@ -c $^
+	ar rcs $(NAME) $(OBJ)
 
 clean :
 	$(RM) $(OBJ)

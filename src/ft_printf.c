@@ -1,4 +1,16 @@
-#include "libft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/21 10:41:04 by aascedu           #+#    #+#             */
+/*   Updated: 2022/11/21 15:16:14 by aascedu          ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../include/libft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {
@@ -9,15 +21,17 @@ int	ft_printf(const char *str, ...)
 	va_start(ap, str);
 	i = 0;
 	length = 0;
+	if (ft_strlen(str) == 1 && str[0] == '%')
+		return (length);
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			length = length + ft_specifier(ap, str[i + 1]);
+			length += ft_specifier(ap, str[i + 1]);
 			i++;
 		}
 		else
-			length = length + ft_print_char(str[i]);
+			length += ft_print_char(str[i]);
 		i++;
 	}
 	return (length);
