@@ -6,13 +6,13 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:41:01 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 16:57:26 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/24 11:36:02 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-void	ft_put_unbr(unsigned int n, int *length)
+static void	ft_put_unbr(unsigned int n, int *length)
 {
 	if (n > 9)
 	{
