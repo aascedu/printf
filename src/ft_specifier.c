@@ -6,11 +6,19 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:41:08 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/25 13:04:08 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 13:49:01 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+
+static int	ft_isformat(int c)
+{
+	if (c == 'd' || c == 'i' || c == 'c' || c == 's' || c == 'p' || c == 'x'
+		|| c == 'X' || c == 'u' || c == '%')
+		return (1);
+	return (0);
+}
 
 int	ft_specifier(va_list ap, const char c)
 {
@@ -31,5 +39,7 @@ int	ft_specifier(va_list ap, const char c)
 		length += ft_print_unbr(va_arg(ap, unsigned int));
 	else if (c == '%')
 		length += ft_print_char('%');
+	else if (!ft_isformat(c))
+		length += ft_print_char(c);
 	return (length);
 }
