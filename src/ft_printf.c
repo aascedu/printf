@@ -6,7 +6,7 @@
 /*   By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 10:41:04 by aascedu           #+#    #+#             */
-/*   Updated: 2022/11/21 17:00:54 by aascedu          ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 13:22:18 by aascedu          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,23 @@ int	ft_printf(const char *str, ...)
 
 	if (write(1, 0, 0))
 		return (-1);
+	if (!str)
+		return (ft_print_str("(null)"));
 	va_start(ap, str);
-	i = 0;
 	length = 0;
 	if (ft_strlen(str) == 1 && str[0] == '%')
 		return (va_end(ap), length);
+	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
-			length += ft_specifier(ap, str[i + 1]);
 			i++;
+			length += ft_specifier(ap, str[i]);
 		}
 		else
 			length += ft_print_char(str[i]);
 		i++;
 	}
-	va_end(ap);
-	return (length);
+	return (va_end(ap), length);
 }
