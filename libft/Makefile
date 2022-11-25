@@ -6,17 +6,17 @@
 #    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 15:12:19 by aascedu           #+#    #+#              #
-#    Updated: 2022/11/25 12:49:57 by aascedu          ###   ########lyon.fr    #
+#    Updated: 2022/11/25 14:14:38 by aascedu          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
+# All lines commented are so, so that the output doesn't bother the MOULINETTE
+# But I want to keep my Makefile clean and personnalized.
+
 # EFFECTS
-
-BOLD = $'\x1b[1m
-END=$'\x1b[0m
-GREEN=$'\x1b[32m
-
-
+#BOLD = $'\x1b[1m
+#END=$'\x1b[0m
+#GREEN=$'\x1b[32m
 
 SRCS = ft_isalnum.c ft_isascii.c ft_isprint.c ft_memmove.c ft_strlen.c ft_bzero.c \
 		ft_isalpha.c ft_isdigit.c ft_memcpy.c ft_memset.c ft_strlcpy.c \
@@ -31,10 +31,10 @@ HEADER = libft.h
 
 OBJS = $(SRCS:.c=.o)
 
-CC = @cc
-RM = @rm -f
+CC = cc
+RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -I.
-AR = @ar
+AR = ar
 ARFLAGS = rcs
 
 NAME = libft.a
@@ -43,12 +43,12 @@ all: $(NAME)
 
 %.o : %.c Makefile $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
-	@echo "$(BOLD)libft/$<.c$(END) $(GREEN)compiled !$(END)"
+#	@echo "$(BOLD)libft/$<.c$(END) $(GREEN)compiled !$(END)"
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
-	@echo
-	@echo "$(BOLD)$(NAME)$(END) $(GREEN)has been created !$(END)"
+#	@echo
+#	@echo "$(BOLD)$(NAME)$(END) $(GREEN)has been created !$(END)"
 
 clean:
 	$(RM) $(OBJS)
