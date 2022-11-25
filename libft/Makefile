@@ -3,12 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aascedu <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 15:12:19 by aascedu           #+#    #+#              #
-#    Updated: 2022/11/16 13:52:10 by aascedu          ###   ########lyon.fr    #
+#    Updated: 2022/11/25 12:49:57 by aascedu          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
+
+# EFFECTS
+
+BOLD = $'\x1b[1m
+END=$'\x1b[0m
+GREEN=$'\x1b[32m
+
+
 
 SRCS = ft_isalnum.c ft_isascii.c ft_isprint.c ft_memmove.c ft_strlen.c ft_bzero.c \
 		ft_isalpha.c ft_isdigit.c ft_memcpy.c ft_memset.c ft_strlcpy.c \
@@ -16,20 +24,18 @@ SRCS = ft_isalnum.c ft_isascii.c ft_isprint.c ft_memmove.c ft_strlen.c ft_bzero.
 		ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_strlcat.c ft_calloc.c \
 		ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-		ft_putnbr_fd.c \
-
-SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-			 ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+		ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
 HEADER = libft.h
 
 OBJS = $(SRCS:.c=.o)
 
-OBJS_BONUS = $(SRCS_BONUS:.c=.o)
-
-CC = cc
-RM = rm -f
+CC = @cc
+RM = @rm -f
 CFLAGS = -Wall -Werror -Wextra -I.
+AR = @ar
+ARFLAGS = rcs
 
 NAME = libft.a
 
@@ -37,15 +43,15 @@ all: $(NAME)
 
 %.o : %.c Makefile $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
+	@echo "$(BOLD)libft/$<.c$(END) $(GREEN)compiled !$(END)"
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
-
-bonus: $(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	@echo
+	@echo "$(BOLD)$(NAME)$(END) $(GREEN)has been created !$(END)"
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
