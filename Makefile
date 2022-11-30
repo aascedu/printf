@@ -6,7 +6,7 @@
 #    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 13:22:24 by aascedu           #+#    #+#              #
-#    Updated: 2022/11/25 14:15:11 by aascedu          ###   ########lyon.fr    #
+#    Updated: 2022/11/30 11:22:15 by aascedu          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,9 @@ lib :
 	make -C $(LIBFT_DIR)
 #	@echo
 
+lib_re :
+	make re -C $(LIBFT_DIR)
+
 clean :
 	$(RM) $(OBJ)
 	make clean -C $(LIBFT_DIR)
@@ -70,6 +73,6 @@ fclean : clean
 	make fclean -C $(LIBFT_DIR)
 #	@echo "And $(BOLD)$(NAME)$(END) and $(BOLD)libft.a$(END) have been $(GREEN)removed.$(END)"
 
-re : fclean $(NAME)
+re : fclean lib_re $(NAME)
 
-.PHONY : all lib clean fclean re
+.PHONY : all lib lib_re clean fclean re
