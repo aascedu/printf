@@ -6,7 +6,7 @@
 #    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/21 13:22:24 by aascedu           #+#    #+#              #
-#    Updated: 2022/11/30 13:44:46 by aascedu          ###   ########lyon.fr    #
+#    Updated: 2022/12/02 13:07:00 by aascedu          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ NAME = libftprintf.a
 all : lib
 	make $(NAME)
 
-%.o : %.c Makefile $(HEADER) $(LIBFT)
+%.o : %.c $(HEADER) $(LIBFT)
 	$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
 #	@echo "$(BOLD)$<$(END) $(GREEN)compiled !$(END)"
 

@@ -6,7 +6,7 @@
 #    By: aascedu <aascedu@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 15:12:19 by aascedu           #+#    #+#              #
-#    Updated: 2022/11/25 14:14:38 by aascedu          ###   ########lyon.fr    #
+#    Updated: 2022/12/02 13:07:10 by aascedu          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ NAME = libft.a
 
 all: $(NAME)
 
-%.o : %.c Makefile $(HEADER)
+%.o : %.c $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
 #	@echo "$(BOLD)libft/$<.c$(END) $(GREEN)compiled !$(END)"
 
